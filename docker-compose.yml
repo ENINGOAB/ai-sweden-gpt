@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+
+  service-name:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - tenant-services-network
+
+networks:
+  tenant-services-network:
+    external: true
